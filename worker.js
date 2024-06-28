@@ -2929,7 +2929,7 @@ var src_default = {
         return new Response('Failed to fetch frontend', { status: response.status });
       }
       const originalHtml = await response.text();
-      const modifiedHtml = originalHtml.replace(/https:\/\/bulianglin2023\.dev/, host);
+      const modifiedHtml = replaceBachend(originalHtml, host)
       return new Response(modifiedHtml, {
         status: 200,
         headers: {
@@ -3053,6 +3053,16 @@ var src_default = {
     return rpResponse;
   }
 };
+
+
+
+
+function replaceBachend(html, host) {
+    return html.replace('#{cloudflare_worker_sub}', host);
+}
+
+
+
 function replaceInUri(link, replacements, isRecovery) {
   switch (true) {
     case link.startsWith("ss://"):
