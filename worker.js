@@ -2920,6 +2920,8 @@ var src_default = {
     const host = url.origin;
     const frontendUrl = env.FRONTEND || 'https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html';
     const SUB_BUCKET = env.SUB_BUCKET;
+    const REMOTE_CONFIG = env.REMOTE_CONFIG;
+    const remoteConfig = getRemoteConfig(REMOTE_CONFIG);
     let backend = env.BACKEND.replace(/(https?:\/\/[^/]+).*$/, "$1");
     const subDir = "subscription";
     const pathSegments = url.pathname.split("/").filter((segment) => segment.length > 0);
@@ -2929,7 +2931,8 @@ var src_default = {
         return new Response('Failed to fetch frontend', { status: response.status });
       }
       const originalHtml = await response.text();
-      const modifiedHtml = replaceBackend(originalHtml, host)
+      let modifiedHtml = replaceBackend(originalHtml, host);
+      modifiedHtml = replaceRemoteConfig(modifiedHtml,remoteConfig)
       return new Response(modifiedHtml, {
         status: 200,
         headers: {
@@ -3059,6 +3062,27 @@ var src_default = {
 
 function replaceBackend(html, host) {
     return html.replace('#{cloudflare_worker_sub}', host);
+}
+
+
+function getRemoteConfig(envConfig = '') {
+    const envConfigArr = envConfig.split('\n');
+
+    return envConfigArr.reduce((acc, cur) => {
+        const [key, value] = cur.split(':');
+
+        acc.push({
+            label: key,
+            value
+        });
+
+        return acc;
+    }, []);
+}
+
+
+function replaceRemoteConfig(html,config){
+  return html.replace('// #{CLOUDFLARE_ENV_REMOTE}', JSON.stringify(config));
 }
 
 
