@@ -3082,7 +3082,7 @@ function getRemoteConfig(envConfig = '') {
 
 
 function replaceRemoteConfig(html,config){
-  return html.replace('// #{CLOUDFLARE_ENV_REMOTE}', JSON.stringify(config));
+  return html.replace('[],// #{CLOUDFLARE_ENV_REMOTE}', JSON.stringify(config));
 }
 
 
