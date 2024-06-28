@@ -2929,7 +2929,7 @@ var src_default = {
         return new Response('Failed to fetch frontend', { status: response.status });
       }
       const originalHtml = await response.text();
-      const modifiedHtml = replaceBachend(originalHtml, host)
+      const modifiedHtml = replaceBackend(originalHtml, host)
       return new Response(modifiedHtml, {
         status: 200,
         headers: {
@@ -3057,7 +3057,7 @@ var src_default = {
 
 
 
-function replaceBachend(html, host) {
+function replaceBackend(html, host) {
     return html.replace('#{cloudflare_worker_sub}', host);
 }
 
