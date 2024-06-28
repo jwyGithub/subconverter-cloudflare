@@ -25,6 +25,11 @@ subconverter-cloudflare
     <td></td>
   </tr>
   <tr>
+    <td>LOCK_BACKEND</td>
+    <td>是否禁用后端地址选择</td>
+    <td>默认true</td>
+  </tr>
+  <tr>
     <td>FRONTEND</td>
     <td>页面地址</td>
     <td>https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html</td>
