@@ -3072,8 +3072,8 @@ function getRemoteConfig(envConfig = '') {
         const [key, value] = cur.split(':');
 
         acc.push({
-            label: key,
-            value
+            label: key || value,
+            value: value || key
         });
 
         return acc;
