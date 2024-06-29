@@ -17,7 +17,7 @@ subconverter-cloudflare
   <tr>
     <td>BACKEND</td>
     <td>后端转换地址</td>
-    <td></td>
+    <td>默认https://url.v1.mk</td>
   </tr>
   <tr>
     <td>SUB_BUCKET</td>
@@ -30,16 +30,11 @@ subconverter-cloudflare
     <td>默认true</td>
   </tr>
   <tr>
-    <td>FRONTEND</td>
-    <td>页面地址</td>
-    <td>https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html</td>
-  </tr>
-  <tr>
     <td>REMOTE_CONFIG</td>
     <td>自定义远端配置,多个换行</td>
     <td>
-        自定义配置1: https://xxxxx1 <br>
-        自定义配置2: https://xxxxx2
+        https://xxxxx1<br>
+        https://xxxxx2
     </td>
   </tr>
 </table>

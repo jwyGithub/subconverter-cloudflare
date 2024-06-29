@@ -3144,9 +3144,9 @@ var src_default = {
         const host = url.origin;
         const frontendUrl = env.FRONTEND || 'https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html';
         const SUB_BUCKET = env.SUB_BUCKET;
-        const REMOTE_CONFIG = env.REMOTE_CONFIG;
+        const REMOTE_CONFIG = env.REMOTE_CONFIG || "";
         const LOCK_CONFIG = env.LOCK_BACKEND || 'true';
-        const remoteConfig = getRemoteConfig(REMOTE_CONFIG);
+        const remoteConfig = REMOTE_CONFIG === '' ? [] : getRemoteConfig(REMOTE_CONFIG);
         let backend = env.BACKEND.replace(/(https?:\/\/[^/]+).*$/, '$1');
         const subDir = 'subscription';
         const pathSegments = url.pathname.split('/').filter(segment => segment.length > 0);
@@ -3287,13 +3287,10 @@ function getRemoteConfig(envConfig = '') {
     const envConfigArr = envConfig.split('\n');
 
     return envConfigArr.reduce((acc, cur) => {
-        const [key, value] = cur.split(':');
-
         acc.push({
-            label: key || value,
-            value: value || key
+            label: cur,
+            value: cur
         });
-
         return acc;
     }, []);
 }
