@@ -4,8 +4,8 @@ subconverter-cloudflare
 
 ## 演示网站
 
-[https://sub-convert.visitor-worker.workers.dev/](https://sub-convert.visitor-worker.workers.dev/)
-[https://sub.visitor-vps.cloudns.ch/](https://sub.visitor-vps.cloudns.ch/)
+-   [https://sub-convert.visitor-worker.workers.dev/](https://sub-convert.visitor-worker.workers.dev/) <br/>
+-   [https://sub.visitor-vps.cloudns.ch/](https://sub.visitor-vps.cloudns.ch/)
 
 ## 环境变量
 
@@ -40,7 +40,13 @@ subconverter-cloudflare
   </tr>
 </table>
 
+### 更新日志
+
+-   2024-07-18
+    -   支持 sing-box 规则
+
 ### 鸣谢
 
 -   [https://github.com/bulianglin/psub](https://github.com/bulianglin/psub)
 -   [https://github.com/ACL4SSR/ACL4SSRs](https://github.com/ACL4SSR/ACL4SSR)
+
