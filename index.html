@@ -51659,6 +51659,7 @@
                                                             Clash新参数: 'clash&new_name=true',
                                                             ClashR新参数: 'clashr&new_name=true',
                                                             Clash: 'clash',
+                                                            "Sing-Box": "singbox",
                                                             Surge3: 'surge&ver=3',
                                                             Surge4: 'surge&ver=4',
                                                             Quantumult: 'quan',
@@ -51932,6 +51933,9 @@
                                                             },
                                                             clash: {
                                                                 doh: !1
+                                                            },
+                                                            singbox: {
+                                                                ipv6: !1
                                                             }
                                                         }
                                                     },
@@ -52067,6 +52071,7 @@
                                                         'clash' === this.form.clientType &&
                                                             (!0 === this.form.tpl.clash.doh && (this.customSubUrl += '&clash.doh=true'),
                                                             (this.customSubUrl += '&new_name=' + this.form.new_name.toString()))),
+                                                        'singbox' === this.form.clientType && !0 === this.form.tpl.singbox.ipv6 && (this.customSubUrl += '&singbox.ipv6=1'),
                                                     this.$copyText(this.customSubUrl),
                                                     this.$message.success('定制订阅已复制到剪贴板');
                                             },
