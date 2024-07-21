@@ -3142,7 +3142,7 @@ var src_default = {
     async fetch(request, env) {
         const url = new URL(request.url);
         const host = url.origin;
-        const frontendUrl = env.FRONTEND || 'https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html';
+        const frontendUrl = env.FRONTEND || `https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html?t=${Date.now()}`;
         const SUB_BUCKET = env.SUB_BUCKET;
         const REMOTE_CONFIG = env.REMOTE_CONFIG || "";
         const LOCK_CONFIG = env.LOCK_BACKEND || 'true';
