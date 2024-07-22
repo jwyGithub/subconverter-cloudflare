@@ -2,6 +2,11 @@
 
 subconverter-cloudflare
 
+<p>
+  <img src="https://img.shields.io/github/issues/jwyGithub/subconverter-cloudflare" alt='issues'>
+  <img src="https://img.shields.io/github/license/jwyGithub/subconverter-cloudflare" alt='license'>
+</p>
+
 ## 演示网站
 
 -   [https://sub-convert.visitor-worker.workers.dev/](https://sub-convert.visitor-worker.workers.dev/) <br/>
