@@ -3300,7 +3300,7 @@ function replaceRemoteConfig(html, config) {
 }
 
 function replaceDisabled(html, v) {
-    return html.replace('#{DISABLED_BACKEND}', v === 'true');
+    return html.replace("'#{DISABLED_BACKEND}'", v === 'true');
 }
 
 function replaceInUri(link, replacements, isRecovery) {
