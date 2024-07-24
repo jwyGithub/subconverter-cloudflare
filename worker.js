@@ -3142,9 +3142,10 @@ var src_default = {
     async fetch(request, env) {
         const url = new URL(request.url);
         const host = url.origin;
-        const frontendUrl = env.FRONTEND || `https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html?t=${Date.now()}`;
-        const SUB_BUCKET = env.SUB_BUCKET;
-        const REMOTE_CONFIG = env.REMOTE_CONFIG || "";
+        const frontendUrl =
+            env.FRONTEND || `https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html?t=${Date.now()}`;
+        const SUB_BUCKET = env[env.SUB_BUCKET];
+        const REMOTE_CONFIG = env.REMOTE_CONFIG || '';
         const LOCK_CONFIG = env.LOCK_BACKEND || 'true';
         const remoteConfig = REMOTE_CONFIG === '' ? [] : getRemoteConfig(REMOTE_CONFIG);
         let backend = env.BACKEND.replace(/(https?:\/\/[^/]+).*$/, '$1');
@@ -3208,11 +3209,7 @@ var src_default = {
             for (const url2 of urlParts) {
                 const key = generateRandomStr(11);
                 if (url2.startsWith('https://') || url2.startsWith('http://')) {
-                    response = await fetch(url2, {
-                        method: request.method,
-                        headers: request.headers,
-                        redirect: 'follow' // https://developers.cloudflare.com/workers/runtime-apis/request#constructor
-                    });
+                    response = await fetch(url2);
                     if (!response.ok) continue;
                     const plaintextData = await response.text();
                     parsedObj = parseData(plaintextData);
