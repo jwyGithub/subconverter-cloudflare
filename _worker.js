@@ -5784,7 +5784,8 @@ var src_default = {
         const host = url.origin;
         const frontendUrl =
             env.FRONTEND || `https://raw.githubusercontent.com/jwyGithub/subconverter-cloudflare/main/index.html?t=${Date.now()}`;
-        const SUB_BUCKET = env[env.SUB_BUCKET];
+        //const SUB_BUCKET = env[env.SUB_BUCKET];
+        const SUB_BUCKET = env.SUB_BUCKET;
         const REMOTE_CONFIG = env.REMOTE_CONFIG || '';
         const LOCK_CONFIG = env.LOCK_BACKEND || 'true';
         const remoteConfig = REMOTE_CONFIG === '' ? [] : getRemoteConfig(REMOTE_CONFIG);
