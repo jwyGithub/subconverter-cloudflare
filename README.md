@@ -45,6 +45,10 @@ subconverter-cloudflare
   </tr>
 </table>
 
+### 请确保你的 SUB_BUCKET 的值和绑定的 kv 名称一致
+
+![alt text](image.png) ![alt text](image-2.png)
+
 ### 更新日志
 
 -   2024-07-18
