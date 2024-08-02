@@ -60,7 +60,7 @@ subconverter-cloudflare
 
 -   2024-07-18
     -   支持 sing-box 规则
--   2024-08-01
+-   2024-08-02
     -   支持 hyhysteria2 订阅链接
 
 ### 鸣谢
