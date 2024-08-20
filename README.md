@@ -62,6 +62,8 @@ subconverter-cloudflare
     -   支持 sing-box 规则
 -   2024-08-02
     -   支持 hyhysteria2 订阅链接
+-   2024-08-20
+    -   支持 hy2 订阅链接
 
 ### 鸣谢
 
