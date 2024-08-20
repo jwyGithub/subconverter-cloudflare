@@ -5870,7 +5870,7 @@ var src_default = {
                 } else {
                     parsedObj = parseData(url2);
                 }
-                if (/^(ssr?|vmess1?|trojan|vless|hysteria|hysteria2):\/\//.test(url2)) {
+                if (/^(ssr?|vmess1?|trojan|vless|hysteria|hysteria2|hy2):\/\//.test(url2)) {
                     const newLink = replaceInUri(url2, replacements, false);
                     if (newLink) replacedURIs.push(newLink);
                     continue;
@@ -5961,8 +5961,9 @@ function replaceInUri(link, replacements, isRecovery) {
         case link.startsWith('hysteria://'):
             return replaceHysteria(link, replacements);
         case link.startsWith("hysteria2://"):
-        case link.startsWith("hy2://"):
             return replaceHysteria2(link, replacements, isRecovery);
+        case link.startsWith("hy2://"):
+            return replaceHy2(link, replacements, isRecovery);
         default:
             return;
     }
@@ -6127,6 +6128,23 @@ function replaceHysteria2(link, replacements,isRecovery) {
     const randomUUID = generateRandomUUID();
     const randomDomain = generateRandomStr(10) + ".com";
     const regexMatch = link.match(/(hysteria2):\/\/(.*)@(.*?):/);
+    if (!regexMatch) {
+        return;
+    }
+    const [, , uuid, server] = regexMatch;
+    replacements[randomDomain] = server;
+    replacements[randomUUID] = uuid;
+    const regex = new RegExp(`${uuid}|${server}`, "g");
+    if (isRecovery) {
+        return link.replace(regex, (match) => cReplace(match, uuid, replacements[uuid], server, replacements[server]));
+    } else {
+        return link.replace(regex, (match) => cReplace(match, uuid, randomUUID, server, randomDomain));
+    }
+}
+function replaceHy2(link, replacements,isRecovery) {
+    const randomUUID = generateRandomUUID();
+    const randomDomain = generateRandomStr(10) + ".com";
+    const regexMatch = link.match(/(hy2):\/\/(.*)@(.*?):/);
     if (!regexMatch) {
         return;
     }
