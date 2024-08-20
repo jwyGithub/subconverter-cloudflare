@@ -5961,6 +5961,7 @@ function replaceInUri(link, replacements, isRecovery) {
         case link.startsWith('hysteria://'):
             return replaceHysteria(link, replacements);
         case link.startsWith("hysteria2://"):
+        case link.startsWith("hy2://"):
             return replaceHysteria2(link, replacements, isRecovery);
         default:
             return;
