@@ -11,6 +11,7 @@ subconverter-cloudflare
 
 -   [https://sub-convert.visitor-worker.workers.dev/](https://sub-convert.visitor-worker.workers.dev/) <br/>
 -   [https://sub.zvz.cloudns.ch/](https://sub.zvz.cloudns.ch/)
+-   [https://sub.looby.us.kg/](https://sub.looby.us.kg/)
 
 ## 环境变量
 
