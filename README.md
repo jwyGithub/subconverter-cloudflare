@@ -2,7 +2,8 @@
 
 subconverter-cloudflare
 
-> [!NOTE] 由于此项目转换时会存在节点丢失问题，新项目已经迁移，此项目 bug 不在修复，如果有对于新项目的建议以及问题请提交此项目的 issue 中
+> [!TIP] 
+> 由于此项目转换时会存在节点丢失问题，新项目已经迁移，此项目 bug 不在修复，如果有对于新项目的建议以及问题请提交此项目的 issue 中
 
 > 迁移进度
 
@@ -11,11 +12,11 @@ subconverter-cloudflare
 -   [x] vless
 -   [x] vmess
 -   [x] trojan
--   [] hyhysteria
--   [] hyhysteria2
--   [] hy2
--   [] sub
--   [] 自定义短链
+-   [ ] hyhysteria
+-   [ ] hyhysteria2
+-   [ ] hy2
+-   [ ] sub
+-   [ ] 自定义短链
 
 <p>
   <img src="https://img.shields.io/github/issues/jwyGithub/subconverter-cloudflare" alt='issues'>
