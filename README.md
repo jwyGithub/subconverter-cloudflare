@@ -5,6 +5,9 @@ subconverter-cloudflare
 > [!TIP] 
 > 由于此项目转换时会存在节点丢失问题，新项目已经迁移，此项目 bug 不在修复，如果有对于新项目的建议以及问题请提交此项目的 issue 中
 
+> 项目地址
+[sub-convert](https://github.com/jwyGithub/sub-convert)
+
 > 迁移进度
 
 -   [x] ss
