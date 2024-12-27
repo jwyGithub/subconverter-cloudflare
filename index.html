@@ -52084,8 +52084,8 @@
                                                 this.loading = !0;
                                                 var t = new FormData();
                                                 t.append('longUrl', btoa(this.customSubUrl)),
-                                                    this.$axios.get(`/set_short_url?sub_url=${this.customSubUrl}`).then(res=>{
-                                                        e.curtomShortSubUrl = res;
+                                                    this.$axios.get(`/set_short_url?sub_url=${btoa(this.customSubUrl)}`).then(res=>{
+                                                        e.curtomShortSubUrl = res.data;
                                                     }).catch(err=>{
                                                         e.$message.error('短链接获取失败');
                                                     }).finally(function () {
