@@ -15,11 +15,10 @@ subconverter-cloudflare
 -   [x] vless
 -   [x] vmess
 -   [x] trojan
--   [ ] hyhysteria
--   [ ] hyhysteria2
--   [ ] hy2
--   [ ] sub
--   [ ] 自定义短链
+-   [x] hyhysteria
+-   [x] hyhysteria2
+-   [x] hy2
+-   [x] 自定义短链
 
 <p>
   <img src="https://img.shields.io/github/issues/jwyGithub/subconverter-cloudflare" alt='issues'>
